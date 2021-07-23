@@ -1,0 +1,67 @@
+<form class="inscription" action="profil.php" method="post">
+  <fieldset>
+    <legend class="inscription">
+      Devenir adhérant
+    </legend>
+    <p class="Formulaire">
+      Adresse mail : <br> <input type="email" name="adresse" placeholder="***@***.com" required>
+    </p>
+    <p class="Formulaire">
+      Téléphone Fixe : <br> <input type="tel" name="fixe" placeholder="09********" pattern="[0]{1}[0-9]{9}" required>
+    </p>
+    <p class="Formulaire">
+      Téléphone portable : <br> <input type="tel" name="portable" placeholder="06********" pattern="[0]{1}[0-9]{9}" required>
+    </p>
+    <p class="Formulaire">
+      Numéro en cas d'urgence <br> <input type="tel" name="urgence" placeholder="06********" pattern="[0]{1}[0-9]{9}" required>
+    </p>
+    <p class="Formulaire">
+      Date de naissance : <br> <input type="date" name="ddn" placeholder="Ex : **/**/****" required>
+    </p>
+    <p>
+      Temps d'adhération : <br><select class="" name="datefiniinscri">
+        <option value="1">Un mois</option>
+        <option value="2">3 mois</option>
+        <option value="3">6 mois</option>
+        <option value="4">1 an</option>
+      </select>
+    </p>
+    <input class="bouton" type="submit" name="submit" value="S'inscrire">
+    <input class="bouton" type="reset" value="Tout effacer" >
+  </fieldset>
+</form>
+<?php  if (isset($_POST["submit"])) {
+$adresse = $_POST['adresse'];
+$fixe = $_POST['fixe'];
+$portable = $_POST['portable'];
+$urgence = $_POST['urgence'];
+$ddn = $_POST['ddn'];
+if ($_POST['datefiniinscri']==1) {
+  $datefiniinscri = date('Y-m-d', strtotime('+1 month'));
+}
+if ($_POST['datefiniinscri']==2) {
+  $datefiniinscri = date('Y-m-d', strtotime('+3 months'));
+}
+if ($_POST['datefiniinscri']==3) {
+  $datefiniinscri = date('Y-m-d', strtotime('+6 months'));
+}
+if ($_POST['datefiniinscri']==4) {
+  $datefiniinscri = date('Y-m-d', strtotime('+1 year'));
+}
+$con= mysqli_connect("localhost","root","","fdf");
+mysqli_set_charset($con,"utf8");
+$req = "SELECT User,NomCpte,PrenomCpte,dateinscpte FROM Compte WHERE User = '".$_SESSION['username']."'";
+$res = mysqli_query($con,$req);
+$ligne = mysqli_fetch_array($res);
+$user = $ligne['User'];
+$nom = $ligne['NomCpte'];
+$prenom = $ligne['PrenomCpte'];
+$dateinscri= $ligne['dateinscpte'];
+$req= "INSERT INTO adherant(noadh,user,nomadh,prenomadh,adrmailadh,noteladh,noportadh,dtnaissadh,notelurg,dtinscription,dtfinadh) VALUES (NULL,'$user','$nom','$prenom','$adresse','$fixe','$portable','$ddn','$urgence','$dateinscri','$datefiniinscri')";
+$res= mysqli_query($con,$req);
+if ($res) {
+  $req = "UPDATE Compte SET TypeCompte = 'adh' WHERE user = '".$_SESSION['username']."'";
+  $res = mysqli_query($con,$req);
+}
+mysqli_close($con);
+}

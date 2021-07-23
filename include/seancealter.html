@@ -1,0 +1,24 @@
+<form class="changement" action="seance.php" method="post">
+  <legend class="modif">Veuillez retaper les anciens champs s'il n'y a pas de changement à appliquer : </legend>
+    <table class="modif">
+      <tr class="modif">
+        <td>Ancien Code Prestation : <input type="text" name="oldcode" value="" maxlength="6"></td>
+        <td>Nouveau Code Prestation : <input type="text" name="newcode2" value="" maxlength="6"></td>
+      </tr>
+      <tr class="modif">
+        <td>Date Seance : <input type="date" name="nouvelledate" value=""></td>
+        <td>Code etat Seance : <input type="text" name="newetat" value="" maxlength="2"></td>
+      </tr>
+      <tr class="modif">
+        <td>Prix seance<input type="number" name="newprix" value=" step="0.01"></td>
+        <td>Heure debut Seance : <input type="time" name="newdebut" value="" min="00:00" max="23:59"></td>
+      </tr>
+      <tr class="modif">
+        <td>Heure fin Seance : <input type="time" name="newfin" value="" min="00:00" max="23:59" ></td>
+        <td>Numero de Terrain :  <input type="number" name="newterrain" value=""></td>
+      </tr>
+    </table>
+    <div class="center">
+      <input class='bouton' type="submit" name="change" value="Valider">
+    </div>
+  </form>

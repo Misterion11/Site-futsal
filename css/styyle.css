@@ -1,0 +1,396 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+@font-face {
+	font-family: "AeroFont";
+	src: url('../Police/Aero.ttf');
+}
+body{
+	background-color: rgb(187, 205, 233,0.9);
+	width: 100%;
+}
+h1{
+	text-align: center;
+	color: white;
+	font-size: 40px;
+}
+h1.titre{
+	margin-bottom: 45px;
+	margin-top: -10px;
+	font-size: 30px;
+	color: rgb(67, 2, 119)
+}
+h1.fdf{
+	font-family: AeroFont;
+}
+h2{
+	color: white;
+}
+h3{
+	line-height: 150%;
+}
+img.icone{
+	width: 25px;
+	height: 25px;
+}
+header{
+	width: 100%;
+}
+header.accueil{
+	position:fixed;
+	margin:0px;
+	z-index: 5000;
+	top: 0px;
+	left: 0px;
+}
+div.header{
+	background-color: black;
+	height: 75px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+div.logo{
+	width: 5%;
+}
+img.logo{
+	width: 100%;
+	height:78px;
+}
+div.Titre{
+	display:flex;
+	width: 90%;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	margin-left: 150px;
+}
+div.Connect{
+	width: 10%;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-end;
+	align-items:center;
+}
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background-color: rgb(31, 189, 17,0.85);
+}
+div.nav{
+	margin-left: 50px;
+	margin-right: 50px;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+a.nav{
+	font-size: 20px;
+}
+a.nav:hover{
+	color: rgb(47, 27, 91);
+}
+h2.test{
+	color: white;
+	font-size: 15px;
+}
+a.connexion:hover{
+	color: #007FFF;
+}
+a.connecté{
+	font-size: 15px;
+}
+a.connecté:hover{
+	color: rgb(26, 210, 228);
+}
+a.connexion{
+	font-size: 25px;
+}
+/*Slide auto*/
+div.slide{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding-top: 150px;
+}
+#slide1 {
+	position: relative;
+	width: 1920px;
+	height: 480px;
+	overflow: hidden;
+}
+#imageslide li {
+	display: inline;
+}
+#imageslide {
+	position: absolute;
+	width: 5780px;
+	padding: 0;
+	margin: 0px 0px;
+	animation-name: AutoSlide;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+@keyframes AutoSlide {
+	0%, 15%, 100% {
+		left: 0px; /*1ère image*/
+	}
+	35%, 50% {
+		left: -1925px; /*2ème image*/
+	}
+	70%, 85% {
+		left: -3845px; /*3ème image*/
+	}
+}
+div.image{
+	width: 100%;
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+img.img{
+	width: 350px;
+	height: auto;
+}
+div.Imageuh{
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding: 30px;
+}
+figcaption{
+	font-size: 25px;
+}
+div.textimg{
+	margin-right: 40px;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+}
+img.img2{
+	width: 350px;
+	height: auto;
+	margin-right: 40px;
+}
+footer{
+background-color: rgb(4, 9, 70);
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+footer.pagesimple{
+	background-color: rgb(4, 9, 70);
+	text-align: center;
+	height: 100px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+/*Formulaire*/
+form.inscription
+{
+	width:600px;
+	height:450px;
+	padding: 20px;
+	margin: 20px;
+}
+fieldset
+{
+	height: 100%;
+	text-align: center;
+}
+fieldset, input
+{
+	border: 2px solid  rgb(49, 140, 231);
+	border-radius: 8px;
+}
+div.form{
+	width: 100%;
+	height: 90%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+div.Formulaire{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+input{
+	height: 20px;
+	width: 300px;
+	margin: 8px;
+}
+div.center{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
+}
+input.bouton{
+	width: 150px;
+}
+input.bouton:hover{
+	background-color: rgb(49, 140, 231);
+	opacity: 0.7;
+}
+input.marge{
+	margin-bottom: 25px;
+}
+input.remonter{
+	margin-top: -25px;
+}
+form.connexion{
+	width: 600px;
+	padding: 20px;
+	margin: 20px;
+}
+fieldset.connexion{
+	height: 400px;
+}
+div.centrage{
+	display: flex;
+	height: 360px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+legend{
+	font-size: 21px;
+	text-align: center;
+}
+legend.inscription{
+	margin-bottom: 25px;
+}
+legend.modif{
+	margin-bottom: 25px;
+}
+table.modif{
+	width: 100%;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+textarea{
+	font-size: 16px;
+	margin-right: 12px;
+	margin-left: 12px;
+}
+/*Tableau Prestation*/
+table.presta{
+	border-collapse: collapse;
+	width: 80%;
+}
+td.presta{
+	border: 2px solid green;
+	text-align: center;
+	padding: 5px;
+}
+th.presta{
+	border: 2px solid green;
+	padding: 5px;
+	color: blue;
+	text-decoration: underline;
+}
+div.presta, div.seance{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 50px;
+}
+div.formchang{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+form.changement{
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+}
+div.recherche{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	width: 100%;
+}
+div.reponse{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+form.bouton{
+	text-align: center;
+	margin-top: 15px;
+}
+tr.modif{
+	text-align: center;
+	margin: 0;
+}
+/*Qui sommes nous*/
+div.snickers{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 125px;
+}
+div.twix{
+	width: 60%;
+	text-align: center;
+	margin: 50px;
+}
+/*Profil*/
+img.anonyme{
+    width: 100px;
+		margin: 50px;
+}
+div.infosprofil{
+	display: flex;
+	flex-direction:column;
+  align-items:center;
+}
+div.newinfo{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+table.mdp{
+	border-collapse: collapse;
+	width: 30%;
+	margin-bottom: 50px;
+}
+img.actiphoto {
+    width: 300px;
+}
+div.Activite{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+		padding-top: 25px;
+}
+table.tableauacti{
+    width: 100%;
+    margin: 3% ;
+}
+td.tabacti {
+    border: 0px solid green;
+    text-align: center;
+    width: 50%;
+}
